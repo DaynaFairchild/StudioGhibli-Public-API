@@ -1,0 +1,148 @@
+::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgb(255, 255, 255);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(108, 172, 255);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+  
+  /* Fixed sidenav, full height */
+  .sidenav {
+      height: 100%;
+      /* width: 200px; */
+      width: 185px; 
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: rgb(14, 14, 14);
+      overflow-x: hidden;
+      padding-top: 20px;
+      font-size: 40px;
+      font-weight: bold;
+    }
+    
+    /* Style the sidenav links and the dropdown button */
+    .sidenav div, .dropdown-btn {
+      padding: 6px 8px 6px 16px;
+      text-decoration: none;
+      font-size: 20px;
+      color: white;
+      display: block;
+      border: none;
+      background: none;
+      width:100%;
+      text-align: left;
+      cursor: pointer;
+      outline: none;
+    }
+    
+    /* On mouse-over */
+    .sidenav div:hover, .dropdown-btn:hover {
+      color: rgb(108, 172, 255);
+    }
+    body{
+        font-family: Tahoma, sans-serif;
+    }
+    /* Main content */
+    .main {
+      margin-left: 200px; /* Same as the width of the sidenav */
+      font-size: 20px; /* Increased text to enable scrolling */
+      background-color: rgb(185, 255, 185);
+      border-image: src('/images/SpiritedAwayBorder.png') 20% round;
+      padding-bottom: 25px;
+      padding-top: 10px;
+      margin-top: 20px;
+      padding-right: 45px;
+      padding-left:45px;
+      margin-right:25px;
+      
+    }
+    
+    /* Add an active class to the active dropdown button */
+    .active {
+      background-color: green;
+      color: white;
+    }
+    
+    /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+    /* .dropdown-container {
+      display: none;
+      background-color: #262626;
+      padding-left: 8px;
+    } */
+    
+    /* Optional: Style the caret down icon */
+    .fa-caret-down {
+      float: right;
+      padding-right: 8px;
+    }
+  .banner{
+  display: block;
+  margin-left: 178px;
+  margin-right: auto;
+  }
+  .navTotoro{
+    margin-left:40px;
+  }
+ 
+  /* ul{
+      list-style-image: url('./images/pink.png');
+  }  need to figure out how to resize*/
+  /* .filmsList{
+    list-style-image: url('./images/soot.png') 20px;
+  } */
+  /* .filmsList::before{
+    height:20px;
+    width: 20px;
+  } */
+  /* li::before{
+    list-style-image: url('./images/soot.png') 20px;
+    display: inline-block;
+    height:20px;
+    width: 20px; */
+  /* }
+   .locationsList{
+    list-style-image: url('./images/howls.png');
+    height:20px;
+    width: 20px;
+  }
+  .peopleList{
+    list-style-image: url('./images/princessMononoke.png');
+  }  */
+   .filmTitle{
+      font-weight: bold;
+      font-size: x-large;
+  } 
+  .director{
+      font-style: italic;
+  }
+  .sectionTitle{
+      text-align: center;
+  }
+  hr{
+      
+     border: solid white; 
+  }
+  /* .footer{
+      background-color: black;
+      color:white;
+      margin-bottom: 0;
+      padding-bottom:0;
+  } */ 
+  .aboutImage{
+      margin-left: 35%;
+      margin-right: 25%;
+      border-radius: 25%;
+  }
