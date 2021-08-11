@@ -3,7 +3,7 @@ export default function People(people){
     <h1 class= "sectionTitle">Characters</h1>
     <hr size: "10px" noshade>
     <ul class="peopleList">
-    ${people.map(person => {
+    ${people.map((person,index) => {
         return `
         <div>${person.name}</div>
         <ul>
@@ -11,7 +11,7 @@ export default function People(people){
 
         <li>Gender: ${person.gender}</li>
         <li>Age: ${person.age}</li>
-        <li>Species: ${person.species}</li>
+        <li id="${"speciesName" + index}">Species: ${fetchSpecies(person.species, index)}</li>
         <li>Films: ${person.films}</li>  
         <br>
                  <hr size: "10px" noshade>
@@ -27,16 +27,15 @@ export default function People(people){
 
 }
 
+
 // function getPeopleFilms(location, callback) {
 //     fetch(person.films(person.id))
 //         return title;
 // }
 
-// function fetchThing(filmsURL){
-//     console.log(filmsURL);
-//     fetch(filmsURL).then (r => r.json()).then(d => {
-//         let {title} =d;
-//         console.log(title);
-//         return title;
-//     });
-// }
+ function fetchSpecies(speciesURL, index){
+    fetch(speciesURL).then (r => r.json()).then(d => {
+        let speciesElement = document.getElementById("speciesName" + "" + index);
+        speciesElement.innerText = "Species: " + d.name;
+    });
+ }

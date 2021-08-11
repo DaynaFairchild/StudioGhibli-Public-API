@@ -3,19 +3,21 @@ import People from "./people";
 // import Species from "./species";
 import About from "./about";
 import Locations from "./locations";
+import Film from "./film";
 
 const appDiv = document.getElementById("app");
 const studioGhibliBaseURL ="https://ghibliapi.herokuapp.com";
 const filmsURL ="https://ghibliapi.herokuapp.com/films";
 const peopleURL ="https://ghibliapi.herokuapp.com/people";
-// const speciesURL ="https://ghibliapi.herokuapp.com/species";
+//const speciesURL ="https://ghibliapi.herokuapp.com/species";
 const locationsURL ="https://ghibliapi.herokuapp.com/locations";
+const fimURL ="https://ghibliapi.herokuapp.com/films/"
 
 export default () => {
     
     navFilms();
     navPeople();
-    // navSpecies();
+    //navSpecies();
     navAbout();
     navLocations();
 }
@@ -29,14 +31,14 @@ function getRequestFilms(location, callback) {
         .catch(err => console.log(err));
 }
 
-/*function clickFilmFetch(location, callback) {
-    fetch("https://ghibliapi.herokuapp.com/films/{id}")
+function clickFilmFetch(location, callback) {
+    fetch(`https://ghibliapi.herokuapp.com/films/${location}`)
         .then(response => response.json())
         .then(data => {
             callback(data);
         })
         .catch(err => console.log(err));
-}*/
+}
 
 function navLocations(){
     const locationsNavBtn = document.querySelector(".nav_locations");
@@ -81,16 +83,12 @@ function navFilms() {
     filmsNavBtn.addEventListener('click', function() {
         getRequestFilms(filmsURL, data => {
             appDiv.innerHTML = Films(data);
-             const filmlist = document.querySelectorAll("filmTitle");
-             for (let i = 0; i<filmlist.length; i++)
-             {
-                 filmlist[i].addEventListener("click", function(){
-                    
-                 });
-             }
+            clickFilm(data);
             
         });
+        
     });
+    
 }
 
 function navPeople(){
@@ -101,7 +99,7 @@ function navPeople(){
         });
     });
 }
-// function navSpecies(){
+//function navSpecies(){
 //     const speciesNavBtn = document.querySelector(".nav_species");
 //     speciesNavBtn.addEventListener('click', function() {
 //         getRequestSpecies(speciesURL, data => {
@@ -117,12 +115,15 @@ function navAbout(){
     });
 }
 
-// function clickFilm(){
-//     const filmNavBtn = document.querySelector(film.title);
-//     filmNavBtn.addEventListener('click', function() {
-//         clickFilmFetch(filmsURL, data => {
-//             appDiv.innerHTML = Film(data);
-//         });
-//     });
-// }
+function clickFilm(listOfFilms){
+    listOfFilms.forEach(item => {
+        const filmNavBtn = document.getElementById(item.id);
+        filmNavBtn.addEventListener('click', function() {
+             clickFilmFetch(item.id, data => {
+                 appDiv.innerHTML = Film(data);
+             });
+         });
+    });
+
+ }
 
