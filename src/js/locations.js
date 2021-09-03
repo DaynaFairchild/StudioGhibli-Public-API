@@ -7,8 +7,8 @@ export default function Locations(locations){
         return `
         <div>${location.name}</div>
         <ul>
-        <li>Gender:Climate: ${location.climate}</li>
-        <li>Age:Terrain: ${location.terrain}</li>
+        <li>Climate: ${location.climate}</li>
+        <li>Terrain: ${location.terrain}</li>
         <li>Water surface precentage: ${location.surface_water}%</li>
         <br>
         <hr size: "10px" noshade>

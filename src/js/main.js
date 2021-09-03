@@ -11,7 +11,7 @@ const filmsURL ="https://ghibliapi.herokuapp.com/films";
 const peopleURL ="https://ghibliapi.herokuapp.com/people";
 //const speciesURL ="https://ghibliapi.herokuapp.com/species";
 const locationsURL ="https://ghibliapi.herokuapp.com/locations";
-const fimURL ="https://ghibliapi.herokuapp.com/films/"
+const filmURL ="https://ghibliapi.herokuapp.com/films/"
 
 export default () => {
     

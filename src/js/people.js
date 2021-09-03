@@ -12,7 +12,7 @@ export default function People(people){
         <li>Gender: ${person.gender}</li>
         <li>Age: ${person.age}</li>
         <li id="${"speciesName" + index}">Species: ${fetchSpecies(person.species, index)}</li>
-        <li>Films: ${person.films}</li>  
+         
         <br>
                  <hr size: "10px" noshade>
         </ul>
@@ -39,3 +39,12 @@ export default function People(people){
         speciesElement.innerText = "Species: " + d.name;
     });
  }
+ // <li id="${"films" + index}">Films: ${fetchFilm(person.films, index)}</li> 
+
+ 
+//  function fetchFilm(filmsURL, index){
+//     fetch(filmsURL).then (r => r.json()).then(d => {
+//         let filmElement = document.getElementById("films" + "" + index);
+//         filmElement.innerText = "Films: " + d.name;
+//     });
+//  }
